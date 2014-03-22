@@ -20,16 +20,7 @@
 	<style type="text/css">
         @import url("./custom/login-new.css");
 	</style>
-	{php}
-		if( file_exists( "./library/phpqrcode/qrlib.php" ) ){
-			$qrlib = TRUE;
-		}
-		include_once( "./library/phpqrcode/qrlib.php" );
-		include_once( "./custom/iban_chsum.php" );
-	{/php}
-	{if $qrlib}
-		<!-- NOTE: QRlib is included now -->
-	{/if}
+
 {/capture}
 
 

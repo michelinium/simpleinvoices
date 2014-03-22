@@ -1,5 +1,18 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="cs-CZ">
+
+{php}
+	if( file_exists( "./library/phpqrcode/qrlib.php" ) ){
+		$qrlib = TRUE;
+		echo '<!-- NOTE: QRlib exist, should be included now -->';
+	} else {
+		echo '<!-- NOTE: QRlib NOT exist -->';
+		echo '<!-- Current directory:' . getcwd() . '-->';
+	}
+	include_once( "./library/phpqrcode/qrlib.php" );
+	include_once( "./custom/iban_chsum.php" );
+{/php}
+
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<link rel="stylesheet" type="text/css" href="{$css|urlsafe}" media="all">
@@ -464,7 +477,7 @@
 		// Last four digits
 	$total_price = number_format($this->_tpl_vars['invoiceItem']['gross_total'],2,'.','');
 
-	if( class_exists( 'QRcode' ) && functions_exists( 'iban_chsum' )){
+	if( class_exists( 'QRcode' ) && function_exists( 'iban_chsum' )){
 		$qr_local = TRUE;
 		
 		$qr_php_path = '.';
@@ -514,11 +527,25 @@
 	Variable works? Test: 
 	*}
 	<!-- $qr_local = {$qr_local}, $qr_url_name = {$qr_url_name} -->
-	{if $qr_local}
-		<img style="max-width:100%;margin-top:-16px;margin-left:-13px;" alt="QR platba" src="{$qr_url_name}"/>
-	{else}
-		<img style="max-width:100%;margin-top:-16px;margin-left:-13px;" alt="QR platba" src="http://api.paylibo.com/paylibo/generator/czech/image?accountNumber={php} echo $biller_account; {/php}&bankCode={php} echo $biller_bank; {/php}&amount={php} echo $total_price; {/php}&currency=CZK&vs={$invoice.index_id}&message={$invoice.custom_field1|htmlsafe}&size=400"/>
-	{/if}
+	{php}
+	if ( $qr_local ) :
+		echo '<img style="max-width:100%;margin-top:-16px;margin-left:-13px;" alt="QR platba" src="';
+		echo $qr_url_name;
+		echo '"/>';
+	else :
+		echo '<img style="max-width:100%;margin-top:-16px;margin-left:-13px;" alt="QR platba" src="http://api.paylibo.com/paylibo/generator/czech/image?accountNumber=';
+		echo $biller_account;
+		echo '&bankCode=';
+		echo $biller_bank;
+		echo '&amount=';
+		echo $total_price;
+		echo '&currency=CZK&vs=';
+		echo $this->_tpl_vars['invoice']['index_id'];
+		echo '&message=';
+		echo htmlsafe( $this->_tpl_vars['invoice']['custom_field1'] );
+		echo '&size=400"/>';
+	endif;
+	{/php}
 </div>
 
 {*********************************************************
