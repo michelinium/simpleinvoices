@@ -2,65 +2,57 @@
 
 {include file=$path|cat:'../header.tpl'}
 
-<div class="si_wrap">
 
-<form action="" method="post" id="frmLogin" name="frmLogin">
-	<input type="hidden" name="action" value="login" />	
-	
-	<div class="si_box">
-		<h1>{$LANG.simple_invoices}</h1>
-	
-		<div class="si_box_auth_pad">
-			<table>
-				<tr>
-					<th>{$LANG.email}</th>
-					<td>
-						<input name="user" size="25" type="text" title="user" value="" />
-					</td>
-				</tr>       
-				<tr>
-					<th>{$LANG.password}</th>
-					<td>
-						<input name="pass" size="25" type="password" title="password" value="" />
-					</td>
-				</tr>
-				<tr>
-					<th></th>
-					<td class='td_error'>
+	<div id="login">
+		<div id="login-window">
+			<div class="login-logo"></div>
+			<div class="login-title"></div>
+			<form id="frmLogin" name="frmLogin" action="" method="post">
+				<input type="hidden" name="action" value="login" />
 
-
-{if $errorMessage }
-
-		<div class="si_error_line">{$errorMessage|outhtml}</div>
-	
-{/if}
-
-					</td>
-				</tr>       
-			</table>
-		
-			<div class="si_toolbar">
-					<button type="submit" value="login">Login</button>
-			</div>
+				<div class="login-field">
+					<span class="login-label1">{$LANG.email}:</span>
+					<input name="user" id="name-field" type="text" title="E-mail" spellcheck="false" maxlength="255" autocomplete="off"></input>
+				</div>
+				<div class="login-field">
+					<span class="login-label2">{$LANG.password}:</span>
+					<input name="pass" id="password-field" type="password" title="Heslo" spellcheck="false" maxlength="255" autocomplete="off"></input>
+					<div class="login-submit">
+						<input type="submit" id="btn-login" alt="Login" title="Přihlásit…" value="" ></input>
+					</div>
+				</div>
+				{if $errorMessage }
+					<p class="warning">{$errorMessage|outhtml}!</p>
+				{/if}
+			</form>
 		</div>
 	</div>
 
-</form>
-
-</div>
-
-<div id="si_footer">
-	<div class="si_wrap">
-	    <a href="http://www.simpleinvoices.org">{$LANG.simple_invoices_powered_by}</a>
-	</div>
-</div>
 
 {literal}
 <script language="JavaScript">
 	$(document).ready(function(){
-		$('.si_box').hide();
-		$('.si_box').slideDown(500);
-	});
+		w_h = $(window).height();
+		var m_top = ( w_h > 599 ) ? '100px' : '30px';
+		$('.si_box, #login-window').css('margin-top','-600px');
+		$('.si_box, #login-window').animate({ 'marginTop':m_top }, 1500);
+		$('#login input[type="text"], #login input[type="password"]').attr('style',
+			'background-color: transparent !important; -webkit-text-fill-color: #333 !important;'
+			);
+		// $('#login input[type="text"], #login input[type="password"]').attr('autocomplete','off');
+
+		$('#btn-login').click(function(event){
+			event.preventDefault();
+			$('.si_box, #login-window').animate({ 'marginTop':'-600px'}, 500, function(){
+				$('form#frmLogin').submit();
+			});
+		});
+		$(window).resize(function() {
+			w_h = $(window).height();
+			var m_top = ( w_h > 599 ) ? '100px' : '30px';
+			$('.si_box, #login-window').css('margin-top',m_top);
+		});
+        });
 	document.frmLogin.user.focus();
 </script>
 {/literal}

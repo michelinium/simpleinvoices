@@ -15,6 +15,21 @@
 
 {capture name=hook_head_end}
 	<!-- HOOK_head_end -->
+
+	<meta name="viewport" content="width=480px, height=device-height, initial-scale=0.7, user-scalable=yes">
+	<style type="text/css">
+        @import url("./custom/login-new.css");
+	</style>
+	{php}
+		if( file_exists( "./library/phpqrcode/qrlib.php" ) ){
+			$qrlib = TRUE;
+		}
+		include_once( "./library/phpqrcode/qrlib.php" );
+		include_once( "./custom/iban_chsum.php" );
+	{/php}
+	{if $qrlib}
+		<!-- NOTE: QRlib is included now -->
+	{/if}
 {/capture}
 
 
@@ -22,6 +37,10 @@
 
 {capture name=hook_body_start}
 	<!-- HOOK_body_start -->
+
+	<div id="wall">
+	</div><!-- #wall -->
+
 {/capture}
 
 {capture name=hook_body_end}
