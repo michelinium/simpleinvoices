@@ -523,15 +523,14 @@
 {/php}
 
 <div style="float:left; max-width:24%;" width="24%">
-	{* 
-	Variable works? Test: 
-	*}
-	<!-- $qr_local = {$qr_local}, $qr_url_name = {$qr_url_name} -->
 	{php}
 	if ( $qr_local ) :
-		echo '<img style="max-width:100%;margin-top:-16px;margin-left:-13px;" alt="QR platba" src="';
+		echo '<div class="qr_border" style="position:relative;border:1px solid #000;padding:5%;width:80%;">';
+		echo '<img style="max-width:100%;" alt="QR platba" src="';
 		echo $qr_url_name;
 		echo '"/>';
+		echo '<span class="qr_tag font3" style="position:absolute;top:100%;left:0;margin-top:4px;">QR Platba</span>';
+		echo '</div>';
 	else :
 		echo '<img style="max-width:100%;margin-top:-16px;margin-left:-13px;" alt="QR platba" src="http://api.paylibo.com/paylibo/generator/czech/image?accountNumber=';
 		echo $biller_account;
