@@ -258,10 +258,10 @@
 		</tr>
 		{if $invoice.type_id == 2 }
 			<tr>
-				<td class="tbl1-bottom col1"><b>{$LANG.quantity_short}&nbsp;</b></td>
+				<td class="tbl1-bottom col1" width="10%"><b>{$LANG.quantity_short}&nbsp;</b></td>
 				<td class="tbl1-bottom col1" colspan="3"><b>{$LANG.item}</b></td>
-				<td class="tbl1-bottom col1" align="right"><b>{$LANG.Unit_Cost}</b></td>
-				<td class="tbl1-bottom col1" align="right"><b>{$LANG.Price}</b></td>
+				<td class="tbl1-bottom col1" width="20%" align="right"><b>{$LANG.Unit_Cost}</b></td>
+				<td class="tbl1-bottom col1" width="20%" align="right"><b>{$LANG.Price}</b></td>
 			</tr>
 			{foreach from=$invoiceItems item=invoiceItem}
 				<tr class="" >
@@ -298,10 +298,10 @@
 
 	{if $invoice.type_id == 3 }
 			<tr class="tbl1-bottom col1">
-				<td class="tbl1-bottom "><b>{$LANG.quantity_short}</b></td>
+				<td width="10%" class="tbl1-bottom"><b>{$LANG.quantity_short}</b></td>
 				<td colspan="3" class=" tbl1-bottom"><b>{$LANG.item}</b></td>
-				<td align="right" class=" tbl1-bottom"><b>{$LANG.Unit_Cost}</b></td>
-				<td align="right" class=" tbl1-bottom  "><b>{$LANG.Price}</b></td>
+				<td width="20%" align="right" class=" tbl1-bottom"><b>{$LANG.Unit_Cost}</b></td>
+				<td width="20%" align="right" class=" tbl1-bottom  "><b>{$LANG.Price}</b></td>
 			</tr>
 		
 			{foreach from=$invoiceItems item=invoiceItem}
@@ -387,8 +387,8 @@
         <td width="16%">&nbsp;</td>
         <td width="16%">&nbsp;</td>
         <td width="16%">&nbsp;</td>
-		<td colspan="1" align="right">{$LANG.sub_total}</td>
-		<td colspan="1" align="right">{if $invoice_number_of_taxes > 1}<u>{/if}{$invoice.gross|siLocal_number}{$preference.pref_currency_sign|htmlsafe}{if $invoice_number_of_taxes > 1}</u>{/if}</td>
+		<td width="20%" colspan="1" align="right">{$LANG.sub_total}</td>
+		<td width="20%" colspan="1" align="right">{if $invoice_number_of_taxes > 1}<u>{/if}{$invoice.gross|siLocal_number}{$preference.pref_currency_sign|htmlsafe}{if $invoice_number_of_taxes > 1}</u>{/if}</td>
     </tr>
     {/if}
 	{if $invoice_number_of_taxes > 1 }
@@ -401,8 +401,8 @@
     	
     	<tr>
 	        <td colspan="4">&nbsp;</td>
-			<td colspan="1" align="right">{$invoice.tax_grouped[line].tax_name|htmlsafe}</td>
-			<td colspan="1" align="right">{$invoice.tax_grouped[line].tax_amount|siLocal_number}{$preference.pref_currency_sign|htmlsafe}</td>
+			<td colspan="1" align="right" width="20%">{$invoice.tax_grouped[line].tax_name|htmlsafe}</td>
+			<td colspan="1" align="right" width="20%">{$invoice.tax_grouped[line].tax_amount|siLocal_number}{$preference.pref_currency_sign|htmlsafe}</td>
 	    </tr>
 	    {/if}
 	    
@@ -410,8 +410,8 @@
 	{if $invoice_number_of_taxes > 1}
 	<tr>
         <td colspan="4">&nbsp;</td>
-		<td colspan="1" align="right">{$LANG.tax_total}</td>
-		<td colspan="1" align="right"><u>{$invoice.total_tax|siLocal_number}{$preference.pref_currency_sign|htmlsafe}</u></td>
+		<td colspan="1" align="right" width="20%">{$LANG.tax_total}</td>
+		<td colspan="1" align="right" width="20%"><u>{$invoice.total_tax|siLocal_number}{$preference.pref_currency_sign|htmlsafe}</u></td>
     </tr>
     {/if}
 	{if $invoice_number_of_taxes > 1}
@@ -421,8 +421,8 @@
     {/if}
     <tr>
         <td colspan="4">&nbsp;</td>
-		<td colspan="1" align="right"><b>{$preference.pref_inv_wording|htmlsafe} {$LANG.amount}</b></td>
-		<td colspan="1" align="right"><span class="double_underline">{$invoice.total|siLocal_number}{$preference.pref_currency_sign|htmlsafe}</span></td>
+		<td colspan="1" align="right" width="20%" style="vertical-align:baseline;"><b>{$preference.pref_inv_wording|htmlsafe} {$LANG.amount}</b></td>
+		<td colspan="1" align="right" width="20%" style="vertical-align:baseline;"><span class="double_underline">{$invoice.total|siLocal_number}{$preference.pref_currency_sign|htmlsafe}</span></td>
     </tr>
     {* tax section - end *}
 {* OFF:
