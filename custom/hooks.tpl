@@ -16,10 +16,41 @@
 {capture name=hook_head_end}
 	<!-- HOOK_head_end -->
 
+	{literal}
 	<meta name="viewport" content="width=480px, height=device-height, initial-scale=0.7, user-scalable=yes">
 	<style type="text/css">
         @import url("./custom/login-new.css");
 	</style>
+	<script>
+	function compareDate(str1){
+		// str1 format should be yyyy-mm-dd. Separator can be anything e.g. / or -. It wont effect
+		var yr1   = parseInt(str1.substring(0,4));
+		var mon1  = parseInt(str1.substring(5,7));
+		var dt1   = parseInt(str1.substring(8,10));
+		var date1 = new Date(yr1, mon1-1, dt1);
+		return date1;
+	};
+
+	function customDate(){
+		var days = 14;
+		var date_val = $('input[name="date"]').val();
+		var date_plus = compareDate(date_val);
+		date_plus = new Date(date_plus);
+		date_plus = date_plus.setDate(date_plus.getDate()+days);
+		var date_us = new Date(date_plus);
+		var date1 = date_us.getDate();
+		var date2 = date_us.getMonth()+1;
+		var date3 = date_us.getFullYear();
+		var date_string = date1 + '.' + date2 + '.' + date3;
+		$('input[name="customField3"]').val(date_string);
+	};
+	$(document).ready(function(){
+		$('input[name="date"], input[name="customField3"]').focus(function() {
+			customDate();
+		});
+	});
+	</script>
+	{/literal}
 
 {/capture}
 

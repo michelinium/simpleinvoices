@@ -35,7 +35,11 @@ $(document).ready(function(){
 	*/
 	if($.datePicker){
 		$.datePicker.setDateFormat('ymd','-');
-		$('input.date-picker').datePicker({startDate:'01/01/1970'});
+		$('input.date-picker').datePicker({startDate:'01/01/1970', 
+			onClose: function(dateText, inst){
+				customDate();
+			}
+		});
 		$('input#date2').datePicker({endDate:'01/01/1970'});
 	}
 	if($(".showdownloads")){
