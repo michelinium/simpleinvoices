@@ -32,20 +32,33 @@
 	};
 
 	function customDate(){
-		var days = 14;
+		var pref_val = $('select[name="preference_id"]').val();
+		var days;
+		switch (pref_val)
+		{
+			case 1: days=14; break;
+			case 2: days=1; break;
+			case 3: days=30; break;
+			case 5: days=14; break;
+			case 6: days=1; break;
+			case 7: days=30; break;
+			case 8: days=7; break;
+			case 9: days=21; break;
+			default: days=14;
+		}
 		var date_val = $('input[name="date"]').val();
 		var date_plus = compareDate(date_val);
 		date_plus = new Date(date_plus);
-		date_plus = date_plus.setDate(date_plus.getDate()+days);
+		date_plus = date_plus.setDate(date_plus.getDate() + days);
 		var date_us = new Date(date_plus);
 		var date1 = date_us.getDate();
-		var date2 = date_us.getMonth()+1;
+		var date2 = date_us.getMonth() + 1;
 		var date3 = date_us.getFullYear();
 		var date_string = date1 + '.' + date2 + '.' + date3;
 		$('input[name="customField3"]').val(date_string);
 	};
 	$(document).ready(function(){
-		$('input[name="date"], input[name="customField3"]').focus(function() {
+		$('input[name="date"], input[name="customField3"]').focus(function(){
 			customDate();
 		});
 	});
