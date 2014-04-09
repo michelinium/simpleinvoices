@@ -6,3 +6,4 @@ zend_cache---*
 tmp/cache/*
 config/config.php
 .DS_Store
+ftpsync.settings

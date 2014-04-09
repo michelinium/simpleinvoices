@@ -36,16 +36,17 @@
 		var days;
 		switch (pref_val)
 		{
-			case 1: days=14; break;
-			case 2: days=1; break;
-			case 3: days=30; break;
-			case 5: days=14; break;
-			case 6: days=1; break;
-			case 7: days=30; break;
-			case 8: days=7; break;
-			case 9: days=21; break;
+			case '1': days=14; break;
+			case '2': days=1; break;
+			case '3': days=30; break;
+			case '5': days=14; break;
+			case '6': days=1; break;
+			case '7': days=30; break;
+			case '8': days=7; break;
+			case '9': days=21; break;
 			default: days=14;
 		}
+		// console.log(days);
 		var date_val = $('input[name="date"]').val();
 		var date_plus = compareDate(date_val);
 		date_plus = new Date(date_plus);
@@ -59,6 +60,12 @@
 	};
 	$(document).ready(function(){
 		$('input[name="date"], input[name="customField3"]').focus(function(){
+			customDate();
+		});
+		$('select[name="preference_id"]').click(function(){
+			customDate();
+		});
+		$('select[name="preference_id"]').keyup(function(){
 			customDate();
 		});
 	});
