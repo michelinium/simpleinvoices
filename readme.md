@@ -31,21 +31,7 @@ When cloning the repository use the `--recursive` option to ensure that Zend is 
 * Developer Discussion: [Simple Invoices Google+ Community](https://plus.google.com/communities/102476804981627142204)
 * Developer Mailing List: [Simple Invoices Google Groups](https://groups.google.com/forum/#!forum/simpleinvoices)
 
-We also have a mailing list for tracking commit activity. This is hosted on Google Groups. You can find it here: https://groups.google.com/forum/?fromgroups#!forum/simpleinvoices-trac
-
-
 ## Translations
 We are proud that SimpleInvoices is currently available in 25 different languages but we would love for that number to be even bigger!  
-
-If you would like to help translate SimpleInvoices into your language check out our [translation project](https://www.transifex.com/projects/p/SimpleInvoices/).
-
-For more information refer: [simpleinvoices.org/translate](http://www.simpleinvoices.org/translate)
-
-
-## Reporting Bugs
-Please use the issue tracker on GitHub when reporting bugs.
-https://github.com/simpleinvoices/simpleinvoices/issues
-
-
-## Known Issues
-* **Heart Internet Users** -- There is currently an issue with exporting invoices to PDF. Images are not currently being rendered in the PDF. We are working on resolving this issue but unfortunately we do not yet have a fix. We recommend that you use a different hosting service if you need to export PDF invoices.
+* If you would like to help translate SimpleInvoices into your language check out our [translation project](https://www.transifex.com/projects/p/SimpleInvoices/).
+* For more information refer: [simpleinvoices.org/translate](http://www.simpleinvoices.org/translate)
