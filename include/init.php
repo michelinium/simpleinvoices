@@ -14,10 +14,19 @@ $autoloader->setFallbackAutoloader(true);
 #Zend_Loader::registerAutoload();
 
 
-//session_start();
+// NEW: Modify session_name to unique string for app,
+// to control logging of users in different app directories 
+// on the same domain
+$session_path = $_SERVER['SERVER_NAME'] . $_SERVER['SCRIPT_NAME'];
+	// Get domain and path
+$session_path = preg_replace('#[^/]*$#','', $session_path);
+	// Leave all untill last slash
+$session_path = preg_replace('/[^\w\d\\-\\_]/i','_', $session_path);
+	// Leave chars, digits, dash and underscore
+session_name( $session_path );
+	// session_name() must be defined before session_start() is called
 Zend_Session::start();
 $auth_session = new Zend_Session_Namespace('Zend_Auth');
-
 
 //start use of zend_cache   
 $frontendOptions = array(
