@@ -96,7 +96,11 @@ $LANG['custom_field2'] = "Volitelné pole 2";//1
 $LANG['custom_field3'] = "Volitelné pole 3";//1
 $LANG['custom_field4'] = "Volitelné pole 4";//1
 $LANG['custom_field_db_field_name'] = "Název pole databáze";//1
+<<<<<<< HEAD
 $LANG['custom_fields'] = "Custom fields";//1
+=======
+$LANG['custom_fields'] = "Volitelná pole";//1
+>>>>>>> master_fixes
 $LANG['custom_fields_upper'] = "Volitelná pole";//1
 $LANG['custom_label'] = "Volitelný popis";//1
 $LANG['customer'] = "Odběratel";//1
@@ -585,6 +589,14 @@ $LANG['years'] = "roky";//1
 $LANG['yes'] = "Ano";//1
 $LANG['your_reports'] = "Vaše přehledy";//1
 $LANG['zip'] = "PSČ";//1
+$LANG['manage_product_attributes'] = "Manage Product Attributes";//1
+$LANG['add_product_attribute'] = "Add Product Attribute";//1
+$LANG['insert_product_attribute'] = "Insert Product Attribute";//1
+$LANG['product_attribute'] = "Product Attribute";//1
+$LANG['add_product_value'] = "Add Product Value";//1
+$LANG['insert_product_value'] = "Insert Product Value";//1
+$LANG['product_value'] = "Product Value";//1
+$LANG['manage_product_values'] = "Manage Product Value";//1
 
 $LANG['title_module_index']				= "Domácí";//1
 $LANG['title_module_reports']			= "Domácí / Přehledy";//1
