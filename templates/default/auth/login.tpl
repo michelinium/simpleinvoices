@@ -12,11 +12,11 @@
 
 				<div class="login-field">
 					<span class="login-label1">{$LANG.email}:</span>
-					<input name="user" id="name-field" type="text" title="E-mail" spellcheck="false" maxlength="255" autocomplete="off"></input>
+					<input name="user" id="name-field" type="text" title="E-mail" spellcheck="false" maxlength="255" {* autocomplete="off" *}></input>
 				</div>
 				<div class="login-field">
 					<span class="login-label2">{$LANG.password}:</span>
-					<input name="pass" id="password-field" type="password" title="Heslo" spellcheck="false" maxlength="255" autocomplete="off"></input>
+					<input name="pass" id="password-field" type="password" title="Heslo" spellcheck="false" maxlength="255" {* autocomplete="off" *}></input>
 					<div class="login-submit">
 						<input type="submit" id="btn-login" alt="Login" title="Přihlásit…" value="" ></input>
 					</div>

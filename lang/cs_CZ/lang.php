@@ -2,7 +2,7 @@
 
 /*
 * Script: lang.php
-* 	English translation file
+* 	Czech translation file
 *
 * Last edited:
 *    2013-10-16
@@ -96,11 +96,7 @@ $LANG['custom_field2'] = "Volitelné pole 2";//1
 $LANG['custom_field3'] = "Volitelné pole 3";//1
 $LANG['custom_field4'] = "Volitelné pole 4";//1
 $LANG['custom_field_db_field_name'] = "Název pole databáze";//1
-<<<<<<< HEAD
-$LANG['custom_fields'] = "Custom fields";//1
-=======
 $LANG['custom_fields'] = "Volitelná pole";//1
->>>>>>> master_fixes
 $LANG['custom_fields_upper'] = "Volitelná pole";//1
 $LANG['custom_label'] = "Volitelný popis";//1
 $LANG['customer'] = "Odběratel";//1
