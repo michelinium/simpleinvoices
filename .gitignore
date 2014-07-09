@@ -7,3 +7,4 @@ tmp/cache/*
 .DS_Store
 ftpsync.settings
 library/HTMLPurifier/standalone/HTMLPurifier/DefinitionCache/Serializer/HTML/*
+library/HTMLPurifier/standalone/HTMLPurifier/DefinitionCache/Serializer/CSS/*
