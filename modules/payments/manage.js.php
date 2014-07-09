@@ -50,7 +50,7 @@
 			pagemsg: '{/literal}{$LANG.page}{literal}',
 			ofmsg: '{/literal}{$LANG.of}{literal}',
 			useRp: false,
-			rp: {/literal}{$smarty.get.rp|default:'25'}{literal},
+			rp: {/literal}{$smarty.get.rp|default:'20'}{literal},
 			showToggleBtn: false,
 			showTableToggleBtn: false,
 			width: 'auto',
