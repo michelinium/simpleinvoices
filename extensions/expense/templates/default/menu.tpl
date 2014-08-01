@@ -49,7 +49,7 @@
 				{ if $subPageActive == "invoice_edit"} <li><a class="active active_subpage" href="#">{$LANG.edit}</a></li>{/if}
 				{ if $subPageActive == "invoice_view"} <li><a class="active active_subpage" href="#">{$LANG.quick_view}</a></li>{/if}
 				{* dialog style <li><a { if $pageActive == "invoice_new"} class="active" {/if} id="invoice_dialog" href="#">{$LANG.new_invoice}</a></li> *}
-			<li><a { if $pageActive == "invoice_new"} class="active" {/if} id="invoice_dialogx" href="index.php?module=invoices&amp;view=itemised">{$LANG.new_invoice}</a></li> 
+			<li><a { if $pageActive == "invoice_new"} class="active" {/if} id="invoice_dialogx" href="index.php?module=invoices&amp;view=total">{$LANG.new_invoice}</a></li> 
 				{ if $subPageActive == "invoice_new_itemised"} <li><a class="active active_subpage" href="#">{$LANG.itemised}</a></li>{/if}				
 				{ if $subPageActive == "invoice_new_total"} <li><a class="active active_subpage" href="#">{$LANG.total}</a></li>{/if}				
 			<li><a { if $pageActive == "expense"} class="active" {/if} href="index.php?module=expense&amp;view=manage">{$LANG.expense}</a></li>

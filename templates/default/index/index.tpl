@@ -80,7 +80,7 @@
             <tr>
                 <th>{$LANG.setup_create_invoices}</th>
                 <td class="si_toolbar">
-                    <a href="./index.php?module=invoices&amp;view=itemised" class="positive">
+                    <a href="./index.php?module=invoices&amp;view=total" class="positive">
                         <img src="./images/famfam/add.png" alt="" />
                         {$LANG.new_invoice}
                     </a>
@@ -109,7 +109,7 @@
 
         <h2>{$LANG.start_working}</h2>
 		<div class="si_toolbar">
-			<a href="index.php?module=invoices&amp;view=itemised" class="positive"><img src="./images/common/add.png" alt=""/>{$LANG.add_new_invoice}</a>
+			<a href="index.php?module=invoices&amp;view=total" class="positive"><img src="./images/common/add.png" alt=""/>{$LANG.add_new_invoice}</a>
 			<a href="index.php?module=customers&amp;view=add" class=""><img src="./images/common/vcard_add.png" alt=""/>{$LANG.add_customer}</a>
 			<a href="index.php?module=products&amp;view=add" class=""><img src="./images/common/cart_add.png" alt=""/>{$LANG.add_new_product}</a>
 		</div>

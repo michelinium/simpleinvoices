@@ -33,7 +33,7 @@
 		</span>
 	</div>
 	<div class="si_toolbar si_toolbar_top si_toolbar_top_left">
-		<a href="index.php?module=invoices&amp;view=itemised" class=""><img src="./images/common/add.png" alt="" />{$LANG.new_invoice}</a>
+		<a href="index.php?module=invoices&amp;view=total" class=""><img src="./images/common/add.png" alt="" />{$LANG.new_invoice}</a>
 	</div>
 
 
