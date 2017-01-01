@@ -190,7 +190,12 @@
 			<td class="tbl1-bottom col1"><b>{$LANG.customer}:&nbsp;</b></td>
 			<td class="tbl1-bottom col1 boldy" colspan="3">{$customer.name|htmlsafe}</td>
 	</tr>
-
+        {if $customer.department != null }
+    <tr>
+			<td class="sp-top">{$LANG.customer_department}:</td>
+			<td align=left class="sp-top" colspan="3" >{$customer.department|htmlsafe}</td>
+    </tr>
+        {/if}
         {if $customer.attention != null }
     <tr>
             <td class="sp-top">{$LANG.attention_short}:</td>
