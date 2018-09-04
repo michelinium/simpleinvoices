@@ -508,6 +508,11 @@
 		}
 		/* Call function outside to get IBAN with proper checksum */
 		$iban = iban_chsum( $iban_a, $iban_b, $iban_c, $iban_d, $iban_e );
+		/* Make sure message (project name) is not empty */
+		$msg = mb_strtoupper( $this->_tpl_vars['invoice']['custom_field1'], 'UTF-8' );
+		if ( empty($msg) ) {
+			$msg = '-'
+		}
 		
 		$qr_string  = 'SPD*1.0';
 		$qr_string .= '*ACC:' . $iban;
@@ -515,7 +520,7 @@
 		$qr_string .= '*CC:CZK';
 			// currency (TODO: currently fixed, should be get from elsewhere)
 		$qr_string .= '*X-VS:' . $this->_tpl_vars['invoice']['index_id'];
-		$qr_string .= '*MSG:' . mb_strtoupper( $this->_tpl_vars['invoice']['custom_field1'], 'UTF-8' );
+		$qr_string .= '*MSG:' . $msg;
 
 		$qr_name = 'qr_' . $this->_tpl_vars['invoice']['index_id'] . '_' . md5( $qr_string ) . '.png';
 		$qr_php_name = $qr_php_path . $tmp . $qr_name;
