@@ -508,10 +508,11 @@
 		}
 		/* Call function outside to get IBAN with proper checksum */
 		$iban = iban_chsum( $iban_a, $iban_b, $iban_c, $iban_d, $iban_e );
+		
 		/* Make sure message (project name) is not empty */
 		$msg = mb_strtoupper( $this->_tpl_vars['invoice']['custom_field1'], 'UTF-8' );
 		if ( empty($msg) ) {
-			$msg = '-'
+			$msg = '-';
 		}
 		
 		$qr_string  = 'SPD*1.0';
